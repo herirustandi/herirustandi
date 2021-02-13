@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <title>Aplikasi CRUD python Menggunakan Flask | Apotek </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-sm-5">
+            <h2>ubah data obat</h2>
+            <form action="url_for('edit', kd_obat={{data[0]}})" method="POST">
+                <div class="form-group">
+                    <input type="hidden" name="kd_obat" value="{{data[0]}}" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>nama obat:</label>
+                    <input type="text" name="nama_obat" value="{{data[1]}}" class="form-control" placeholder="Masukan nama barang" required />
+                </div>
+                <div class="form-group">
+                    <label>harga:</label>
+                    <input type="number" name="harga" value="{{data[2]}}" class="form-control" placeholder="Masukan harga" required />
+                </div>
+                <div class="form-group">
+                    <label>stok:</label>
+                    <input type="number" name="stok" value="{{data[3]}}" class="form-control" placeholder="Masukan stok" required />
+                </div>
+                <button type="submit" id="Submit" name="submit" class="btn btn-primary">edit obat</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
